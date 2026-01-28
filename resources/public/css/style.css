@@ -587,6 +587,151 @@ h2 {
   line-height: 1.2;
 }
 
+/* Calendar layout with insights */
+.calendar-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.calendar-card {
+  flex: 1;
+}
+
+.insights-card {
+  flex: 1;
+}
+
+/* Sentiment legend */
+.sentiment-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-color.blue { background: var(--blue); }
+.legend-color.green { background: var(--green); }
+.legend-color.orange { background: var(--orange); }
+.legend-color.red { background: var(--red); }
+
+.legend-label {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+/* Insights panel */
+.insights-panel h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.insights-panel h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.insights-empty {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.insight-section {
+  margin-bottom: var(--space-lg);
+}
+
+.insight-list {
+  list-style: none;
+}
+
+.insight-list li {
+  padding: var(--space-xs) 0;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.tag-name {
+  font-weight: 500;
+}
+
+.sentiment-badge {
+  display: inline-block;
+  padding: 2px var(--space-sm);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.sentiment-badge.blue { background: var(--blue); }
+.sentiment-badge.green { background: var(--green); }
+.sentiment-badge.orange { background: var(--orange); }
+.sentiment-badge.red { background: var(--red); }
+
+.percentage {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.sentiment-tags {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  font-size: 0.875rem;
+}
+
+.tag-list {
+  color: var(--text-muted);
+}
+
+/* Responsive: side-by-side on larger screens */
+@media (min-width: 768px) {
+  #app {
+    max-width: 900px;
+  }
+
+  .calendar-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .calendar-card {
+    flex: 1.2;
+  }
+
+  .insights-card {
+    flex: 1;
+    position: sticky;
+    top: var(--space-md);
+  }
+}
+
 /* Utilities */
 .mt-sm { margin-top: var(--space-sm); }
 .mt-md { margin-top: var(--space-md); }

@@ -14,3 +14,6 @@
 
 (defn sentiment->class [s]
   (when s (name s)))
+
+(defn label [s]
+  (get sentiment-labels s (name s)))
