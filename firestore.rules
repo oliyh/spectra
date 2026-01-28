@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // List of allowed email addresses
+    // Update this with your family's emails
+    function isAllowedUser() {
+      return request.auth != null &&
+             request.auth.token.email in [
+               'parent1@gmail.com',
+               'parent2@gmail.com'
+             ];
+    }
+
+    match /subjects/{subjectId} {
+      allow read, write: if isAllowedUser();
+    }
+
+    match /entries/{entryId} {
+      allow read, write: if isAllowedUser();
+    }
+  }
+}

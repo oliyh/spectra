@@ -1,0 +1,12 @@
+;; Copy this to config.edn and fill in your values
+;; DO NOT commit config.edn to version control
+
+{:firebase {:api-key "your-api-key"
+            :auth-domain "your-project.firebaseapp.com"
+            :project-id "your-project-id"
+            :storage-bucket "your-project.appspot.com"
+            :messaging-sender-id "123456789"
+            :app-id "1:123456789:web:abc123"}
+
+ :allowed-emails #{"parent1@gmail.com"
+                   "parent2@gmail.com"}}
